@@ -1,4 +1,5 @@
 
+from re import S
 from Essentiallies import Splits,Counts
 
 class sumNumbers:
@@ -8,21 +9,24 @@ class sumNumbers:
         self.ess = Splits(self.numbers)
         self.sortNumber = self.ess.splitNumber()
         self.counts= Counts()
+        self.countOddArray= self.counts.countArrayOdd(self.sortNumber)
+        self.countEvenArray= self.counts.countArrayEven(self.sortNumber)
+        self.even= 0
+        self.odd=0
         
         
     def sumOdd(self):
-        
-        impares=0
-        for i in range (0,4):
+        for i in range (0,self.countOddArray):
             j=self.counts.countOdd(i)
-            impares += int(self.sortNumber[j])
-        return impares
+            self.odd+= int(self.sortNumber[j])
+        return self.odd
 
-       
+
+
+
     def sumEven(self):
-        impares =0
 
-        for i in range(0,5):
+        for i in range(0,self.countEvenArray):
             j=self.counts.countEven(i)
 
             multiplicacion = int(self.sortNumber[j]) *2
@@ -30,6 +34,8 @@ class sumNumbers:
             while multiplicacion > 9:
                 multiplicacion -=9
 
-            impares += multiplicacion
+            self.even += multiplicacion
 
-        return impares
+        return self.even
+
+

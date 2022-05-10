@@ -25,6 +25,24 @@ class Counts:
         j=i*2  
         return j
 
+    def countArrayOdd(self,i):
+        if i == list or tuple or dict:
+            j= len(i)
+            j=int(j/2)
+        return j
+
+    def countArrayEven(self,i):
+        if i == list or tuple or dict:
+            j= len(i)
+            j/=2
+
+            if j >= 0.5:
+                j=round(j+0.1)
+                return j
+            
+            j=round(j)
+            
+            return j
 
 
 class Clears:
@@ -40,7 +58,7 @@ class Clears:
     def clearCache(self):
         if os.path.exists("__pycache__"):
             shutil.rmtree("__pycache__") 
-        return 'remove succesfully'
+        return 'succesfully remove'
            
 
 
