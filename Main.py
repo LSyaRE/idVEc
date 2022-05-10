@@ -1,39 +1,23 @@
 from Validator import sumNumbers
+from Essentiallies import Splits
+# Esta parte une todos los modulo0s de la validacion de la cedula y puede ser utilizada 
+# por distintas formas graficas 
 
 
-
-#Ultima parte cedula
 class MainDni: 
     def __init__(self,numbers):
         self.numbers = numbers
         self.validator = sumNumbers(self.numbers)
+        self.split= Splits(self.numbers)
+        self.splitNumber=self.split.splitNumber()
 
-
-    def answerGuess(self):
-        cedula = self.validator.sumEven()+self.validator.sumOdd()
-
-        while cedula > 9 and cedula:
-            cedula -=10
-
-        if cedula == 0:
-            respuesta=cedula
-            return respuesta
         
-        respuesta = 10 - cedula
-        return respuesta
-        
-    def answerGuess(self):
-        cedula = self.validator.sumEven()+self.validator.sumOdd()
-
-        while cedula > 9 and cedula:
-            cedula -=10
-
-        if cedula == 0:
-            respuesta=cedula
-            return respuesta
-        
-        respuesta = 10 - cedula
-        return respuesta
+    
+    
+    def tenDigits(self):
+        self.splitNumber.pop(-1)
+        dot=int(self.split.splitUnirNumber(self.splitNumber))
+        return dot
 
 
 

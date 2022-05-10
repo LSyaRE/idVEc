@@ -2,17 +2,25 @@ import os
 import shutil
 
 
+# Ayuda a separar los caracteres
 class Splits:
 
     def __init__(self,numbers=any):
         self.numbers = numbers
+        self.sentence= ''
 
     def splitNumber(self):
         digits = [int(x) for x in str(self.numbers)]
         return digits
 
+    def splitUnirNumber(self,words_list):
+        for word in words_list:
+            self.sentence += str(word)
+        return self.sentence
 
 
+
+# Esta parte son de los contadores
 class Counts:
     def __init__(self):
         pass
@@ -44,7 +52,7 @@ class Counts:
             
             return j
 
-
+# elimina algunas cosas
 class Clears:
     def __init__(self) -> None:
         pass
