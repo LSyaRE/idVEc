@@ -1,5 +1,5 @@
 from Essentiallies import Clears,Splits
-from Main import MainDni
+from MainDni import MainDni
 from colorama import Fore,Style
 
 
@@ -22,12 +22,11 @@ try:
     number= split.splitNumber()
     splitNumber=split.splitNumber()
     lenght= len(splitNumber)
-
  
     if lenght == 9:
         clearWorkspace()
-        mainDni = main(numDni)
-        hi=mainDni.answerValidate()
+        
+        hi=main.guessNumber()
         print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
         print(Fore.WHITE+Style.BRIGHT+f'Su ultimo numero de cedula es: {Fore.LIGHTGREEN_EX}{hi}')
         print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
@@ -36,17 +35,16 @@ try:
         
     if lenght == 10:
         clearWorkspace()
-        print(main.tenDigits())
         
-        # if main.tenDigits == number[-1]:
-        #     print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
-        #     print(Fore.WHITE+Style.BRIGHT+f'Su ultimo numero de cedula es: {Fore.LIGHTGREEN_EX} valida')
-        #     print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
-        # else:
-        #     print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
-        #     print(Fore.WHITE+Style.BRIGHT+f'Su numero de cedula es: {Fore.RED} erronea')
-        #     print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
-        # print(Fore.WHITE)
+        if main.validateNumber():
+            print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
+            print(Fore.WHITE+Style.BRIGHT+f'Su ultimo numero de cedula es: {Fore.LIGHTGREEN_EX} valida')
+            print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
+        else:
+            print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
+            print(Fore.WHITE+Style.BRIGHT+f'Su numero de cedula es: {Fore.RED} erronea')
+            print(Fore.LIGHTBLUE_EX+Style.NORMAL+'==================================================')
+        print(Fore.WHITE)
         
 
 except ValueError or lenght >= 11:

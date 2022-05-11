@@ -26,18 +26,16 @@ class Counts:
         pass
 
     def countOdd(self,i):
-        j=(i*2)+1
-        return j 
+        return (i*2)+1
 
     def countEven(self,i):
-        j=i*2  
-        return j
+        return i*2
 
     def countArrayOdd(self,i):
         if i == list or tuple or dict:
             j= len(i)
-            j=int(j/2)
-        return j
+            return int(j/2)
+        return False
 
     def countArrayEven(self,i):
         if i == list or tuple or dict:
@@ -47,10 +45,8 @@ class Counts:
             if j >= 0.5:
                 j=round(j+0.1)
                 return j
-            
-            j=round(j)
-            
-            return j
+    
+            return round(j)
 
 # elimina algunas cosas
 class Clears:

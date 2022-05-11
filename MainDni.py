@@ -4,20 +4,23 @@ from Essentiallies import Splits
 # por distintas formas graficas 
 
 
-class MainDni: 
+class MainDni(Splits): 
     def __init__(self,numbers):
         self.numbers = numbers
         self.validator = sumNumbers(self.numbers)
-        self.split= Splits(self.numbers)
-        self.splitNumber=self.split.splitNumber()
+       
 
         
+    def guessNumber(self):
+        return self.validator.answerValidate()
     
-    
-    def tenDigits(self):
-        self.splitNumber.pop(-1)
-        dot=int(self.split.splitUnirNumber(self.splitNumber))
-        return dot
+
+
+    def validateNumber(self):
+        pop = self.validator.popArray()
+        validate= sumNumbers(pop)
+        split = Splits(self.numbers)
+        return validate.answerValidate() == split.splitNumber()[-1]
 
 
 

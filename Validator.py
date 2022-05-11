@@ -35,6 +35,11 @@ class sumNumbers(Splits,Counts):
 
         return self.even
 
+    def popArray(self):
+        self.sortNumber.pop(-1)
+        dni=int(self.ess.splitUnirNumber(self.sortNumber))
+        return dni
+
     def answerValidate(self):
             cedula = self.sumEven()+self.sumOdd()
 
@@ -48,5 +53,3 @@ class sumNumbers(Splits,Counts):
             respuesta = 10 - cedula
             return respuesta
 
-num= sumNumbers(175233076)
-print(num.answerValidate())
