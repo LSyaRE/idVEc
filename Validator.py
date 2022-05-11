@@ -1,6 +1,6 @@
 from Essentiallies import Splits,Counts
 
-class sumNumbers(Splits,Counts):
+class sumNumbers(Counts):
 
     def __init__(self,numbers):
         self.numbers = numbers
@@ -35,21 +35,20 @@ class sumNumbers(Splits,Counts):
 
         return self.even
 
+
     def popArray(self):
         self.sortNumber.pop(-1)
-        dni=int(self.ess.splitUnirNumber(self.sortNumber))
-        return dni
+        return int(self.ess.splitUndoNumber(self.sortNumber))
+
 
     def answerValidate(self):
             cedula = self.sumEven()+self.sumOdd()
 
-            while cedula > 9 and cedula:
+            while cedula > 9:
                 cedula -=10
 
             if cedula == 0:
-                respuesta=cedula
-                return respuesta
+                return cedula
             
-            respuesta = 10 - cedula
-            return respuesta
+            return 10 - cedula
 

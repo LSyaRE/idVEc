@@ -19,7 +19,6 @@ try:
         
     main= MainDni(numDni)
     split= Splits(numDni)
-    number= split.splitNumber()
     splitNumber=split.splitNumber()
     lenght= len(splitNumber)
  

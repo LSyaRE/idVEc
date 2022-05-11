@@ -13,14 +13,14 @@ class Splits:
         digits = [int(x) for x in str(self.numbers)]
         return digits
 
-    def splitUnirNumber(self,words_list):
+    def splitUndoNumber(self,words_list):
         for word in words_list:
             self.sentence += str(word)
         return self.sentence
 
 
 
-# Esta parte son de los contadores
+# Even=Pares y Odd=Impares
 class Counts:
     def __init__(self):
         pass
@@ -35,18 +35,21 @@ class Counts:
         if i == list or tuple or dict:
             j= len(i)
             return int(j/2)
-        return False
+        return 0
+
 
     def countArrayEven(self,i):
         if i == list or tuple or dict:
+            
             j= len(i)
             j/=2
 
             if j >= 0.5:
-                j=round(j+0.1)
-                return j
+                return round(j+0.1)
     
             return round(j)
+
+        return 0
 
 # elimina algunas cosas
 class Clears:
