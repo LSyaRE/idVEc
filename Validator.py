@@ -6,8 +6,8 @@ class sumNumbers(Counts):
         self.numbers = numbers
         self.ess = Splits(self.numbers)
         self.sortNumber = self.ess.splitNumber()
-        self.countOddArray= self.countArrayOdd(self.sortNumber)
-        self.countEvenArray= self.countArrayEven(self.sortNumber)
+        self.countOddArray= self.countTotalArrayOdd(self.sortNumber)
+        self.countEvenArray= self.countTotalArrayEven(self.sortNumber)
         self.even= 0
         self.odd=0
         

@@ -4,7 +4,7 @@ from Essentiallies import Splits
 # por distintas formas graficas 
 
 
-class MainDni(Splits): 
+class MainDni(): 
     def __init__(self,numbers):
         self.numbers = numbers
         self.validator = sumNumbers(self.numbers)
@@ -14,7 +14,6 @@ class MainDni(Splits):
     def guessNumber(self):
         return self.validator.answerValidate()
     
-
 
     def validateNumber(self):
         pop = self.validator.popArray()
