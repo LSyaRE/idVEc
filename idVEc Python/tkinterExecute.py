@@ -26,7 +26,7 @@ def validateAnswer(i):
 
 def ejecutar():
     split = Splits(cedula.get())
-    check= len(split.splitNumber())
+    check= len(split.getSplitNumber())
     if check == 9:
         main= MainDni(cedula.get())
         guess=main.guessNumber()

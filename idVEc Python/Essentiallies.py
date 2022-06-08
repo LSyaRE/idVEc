@@ -5,26 +5,35 @@ import shutil
 # This Class returns numbers converted on Arrays and returns Arrays converted on numbers.
 class Splits:
 
-    def __init__(self,numbers=any):
+    def __init__(self,numbers):
         self.numbers = numbers
         self.sentence= ''
 
-    def splitNumber(self):
+    def getSplitNumber(self):
         return [int(x) for x in str(self.numbers)]
 
-    def splitUndoNumber(self,words_list):
+    def getSplitUndoNumber(self,words_list):
         for word in words_list:
             self.sentence += str(word)
         return int(self.sentence)
 
 
 
-class Arrays:
+class Arrays(Splits):
     def __init__(self,array):
         self.array = array
+        
+        
+    def getArrayPopLastNumber(self):
+        self.array.pop(-1)
+        return int(self.splitUndoNumber(self.array))
+
+
+
 
 
 # Counts
+#Returns Odd and Even numbers also returns the total Even and Odd Elements in the array.  
 class Counts:
     def __init__(self):
         pass
@@ -36,10 +45,8 @@ class Counts:
         return i*2
 
     def countTotalArrayOdd(self,i):
-        if i == list or tuple or dict:
-            j= len(i)
-            return int(j/2)
-        return 0
+        return  int(len(i)/2) if i == list or tuple else 0
+
 
     def countTotalArrayEven(self,i):
         if i == list or tuple:
@@ -67,7 +74,9 @@ class Clears:
     
     def clearCache(self):
         if os.path.exists("__pycache__"):
-            return shutil.rmtree("__pycache__") 
+            return shutil.rmtree("__pycache__")
+
+
         
            
 

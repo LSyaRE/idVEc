@@ -1,6 +1,6 @@
 from Validator import sumNumbers
 from Essentiallies import Splits
-# Esta parte une todos los modulo0s de la validacion de la cedula y puede ser utilizada 
+# Esta parte une todos los modulos de la validacion de la cedula y puede ser utilizada 
 # por distintas formas graficas 
 
 
@@ -12,14 +12,18 @@ class MainDni():
 
         
     def guessNumber(self):
-        return self.validator.answerValidate()
+        return self.validator.getValidate()
     
 
     def validateNumber(self):
         pop = self.validator.popArray()
         validate= sumNumbers(pop)
         split = Splits(self.numbers)
-        return validate.answerValidate() == split.splitNumber()[-1]
+        return validate.getValidate() == split.splitNumber()[-1]
+
+
+
+
 
 
 

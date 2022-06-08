@@ -19,7 +19,7 @@ try:
         
     main= MainDni(numDni)
     split= Splits(numDni)
-    splitNumber=split.splitNumber()
+    splitNumber=split.getSplitNumber()
     lenght= len(splitNumber)
  
     if lenght == 9:
